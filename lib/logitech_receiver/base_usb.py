@@ -87,6 +87,15 @@ _lightspeed_receiver = lambda product_id: {
 	'name':'Lightspeed Receiver'
 }
 
+_audio_dongle = lambda product_id: {
+	'vendor_id':0x046d,
+	'product_id':product_id,
+	'usb_interface':3,
+	'hid_driver':_DRIVER,
+	'name':'[G533 Wireless Headset Dongle]',
+	'may_unpair': False
+}
+
 # standard Unifying receivers (marked with the orange Unifying logo)
 UNIFYING_RECEIVER_C52B    = _unifying_receiver(0xc52b)
 UNIFYING_RECEIVER_C532    = _unifying_receiver(0xc532)
@@ -113,6 +122,9 @@ LIGHTSPEED_RECEIVER_C539  = _lightspeed_receiver(0xc539)
 LIGHTSPEED_RECEIVER_C53a  = _lightspeed_receiver(0xc53a)
 LIGHTSPEED_RECEIVER_C53f  = _lightspeed_receiver(0xc53f)
 
+# Dedicated headset dongles
+DONGLE_G533 = _audio_dongle(0x0a66)
+
 del _DRIVER, _unifying_receiver, _nano_receiver, _lenovo_receiver, _lightspeed_receiver
 
 
@@ -135,6 +147,7 @@ ALL = (
 		LIGHTSPEED_RECEIVER_C539,
 		LIGHTSPEED_RECEIVER_C53a,
 		LIGHTSPEED_RECEIVER_C53f,
+		DONGLE_G533,
 	)
 
 def product_information(usb_id):

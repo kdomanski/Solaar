@@ -43,6 +43,8 @@ ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c53f", GOTO="solaar_apply"
 # Lenovo nano receiver
 ATTRS{idVendor}=="17ef", ATTRS{idProduct}=="6042", GOTO="solaar_apply"
 
+# Dedicated receivers
+ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0a66", GOTO="solaar_apply"
 
 GOTO="solaar_end"
 
